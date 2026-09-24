@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: #0b0b13;
+  --color-accent: #c8f135;
+
+  --font-display: 'DM Serif Display', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+:root {
+  --accent: #c8f135;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0b13;
+  color: #f0f0f5;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes die-roll {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-8deg) scale(0.95); }
+  50%  { transform: rotate(6deg) scale(1.05); }
+  75%  { transform: rotate(-4deg) scale(0.97); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-die-roll {
+  animation: die-roll 0.35s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out both;
+}
+
+/* Esconde scrollbar mas mantém funcionalidade */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
